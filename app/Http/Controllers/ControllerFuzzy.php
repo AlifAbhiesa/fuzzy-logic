@@ -44,12 +44,12 @@ class ControllerFuzzy extends Controller
             $status['ph'] = [0,0,1];
         }
 
-        // DB::table('keputusan')->insert(
-        //     ['suhu' => $request->suhu, 
-        //      'kekeruhan' => $request->kekeruhan,
-        //      'ph' => $request->ph
-        //     ]
-        // );
+        DB::table('keputusan')->insert(
+            ['suhu' => $request->suhu, 
+             'kekeruhan' => $request->kekeruhan,
+             'ph' => $request->ph
+            ]
+        );
 
         $i = 0;
         $x = 0;
@@ -94,21 +94,21 @@ class ControllerFuzzy extends Controller
     
     }
 
-    // public function test(Request $request){
+    public function test(Request $request){
 
-    //     return response()->json([
-    //         'status' => '200',
-    //         'data' => $request->input('data')
-    //     ]);
-    // }
+        return response()->json([
+            'status' => '200',
+            'data' => $request->input('data')
+        ]);
+    }
 
-    // public function getData(Request $request){
+    public function getData(Request $request){
 
-    //     $data = DB::table('keputusan')
-    //     ->orderby('id','DESC')
-    //     ->get();
-    //     $data['token'] =  $request->input('token');
+        $data = DB::table('keputusan')
+        ->orderby('id','DESC')
+        ->get();
+        $data['token'] =  $request->input('token');
         
-    //     return $data;
-    // }
+        return $data;
+    }
 }

@@ -180,7 +180,7 @@
 <script>
     function setDataSuhu(kesimpulan1,kesimpulan2,kesimpulan3,suhu,kekeruhan,ph) {
 		$.ajax({
-			url: "https://skripsi-jul.herokuapp.com/api/getData",
+			url: "http://127.0.0.1:8000/api/getData",
 			type: "GET",
 			cache: false,
 			success: function (response) {
